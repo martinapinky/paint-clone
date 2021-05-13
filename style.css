@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: grey;
+  font-family: 'Roboto Condensed', sans-serif;
+  overflow: hidden;
+}
+
+.top-bar {
+  padding-left: 15px;
+  height: 52px;
+  width: 100%;
+  position: fixed;
+  background-color: rgb(239, 242, 245);
+  display: flex;
+  justify-content: center;
+}
+
+/* Font Awesome Icons */
+.fas,
+.far {
+  font-size: 19px;
+  position: relative;
+  top: 3px;
+  background-color: rgb(115, 140, 166);
+  color: white;
+  padding: 8px;
+  border-radius: 5px;
+  width: 40px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.fas:hover,
+.far:hover {
+  filter: brightness(90%);
+}
+
+.fa-fill-drip {
+  cursor: default;
+}
+
+.fa-undo-alt:hover,
+.fa-trash:hover {
+  color: crimson;
+}
+
+/* Tools */
+.active-tool {
+  position: absolute;
+  top: 9px;
+  left: 5px;
+}
+
+.active-tool > span {
+  background-color: rgb(115, 140, 166);
+  border-radius: 5px;
+  padding: 2.5px 16px;
+  color: greenyellow;
+  font-size: 20px;
+  user-select: none;
+}
+
+.tool {
+  position: relative;
+  top: 3px;
+}
+
+.tool:not(:first-child) {
+  margin-left: 8px;
+}
+
+.brush {
+  background-color: rgb(208, 217, 225);
+  height: 44px;
+  width: 345px;
+}
+
+.brush > * {
+  margin-left: 10px;
+}
+
+.size {
+  min-width: 40px;
+  height: 35px;
+  position: relative;
+  top: 4px;
+  left: -5px;
+  background-color: rgb(115, 140, 166);
+  border-radius: 5px;
+  padding: 2.5px 8px;
+  color: white;
+  font-size: 20px;
+  user-select: none;
+}
+
+/* Custom Slider */
+.slider {
+  -webkit-appearance: none;
+  position: relative;
+  left: -8px;
+  width: 100px;
+  height: 10px;
+  border-radius: 3px;
+  background: white;
+  outline: none;
+  opacity: 0.7;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: rgb(47, 47, 47);
+}
+
+.slider::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  background: rgb(47, 47, 47);
+}
+
+/* JS Color */
+.jscolor {
+  border: 1px solid white;
+  border-radius: 5px;
+  height: 35px;
+  width: 120px;
+  margin-left: 3px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Canvas */
+canvas#canvas {
+  position: absolute;
+  top: 52px;
+  cursor: crosshair;
+  z-index: 10;
+}
+
+/* Mobile Message */
+.mobile-message {
+  display: none;
+}
+
+/* Media Query: Mobile Devices */
+@media screen and (max-width: 960px) {
+  .mobile-message {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 100;
+  }
+}
